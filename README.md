@@ -2,6 +2,8 @@
 
 Gaming L3 chain on Arbitrum Orbit using AnyTrust for low-cost, fast-finality gameplay transactions.
 
+> Built with [ARBuilder](https://github.com/Quantum3-Labs/ARBuilder) — an AI-powered toolkit for deploying Arbitrum Orbit chains.
+
 ## Architecture
 
 | Parameter | Value |
