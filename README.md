@@ -142,11 +142,13 @@ All contracts are deployed and verified on Arbitrum Sepolia (chain ID 421614). T
 
 ### Token Bridge (Orbit Chain - ArcadeDao L3)
 
+> These contracts live on the L3 chain itself (chain ID 942070), not on Arbitrum Sepolia. No public block explorer is available yet — query via L3 RPC at `http://localhost:8449`.
+
 | Contract | Address |
 |----------|---------|
-| Router | [`0xeED90Fa3A78d54AD8431083DFd6c5BbB040e234F`](https://sepolia.arbiscan.io/address/0xeED90Fa3A78d54AD8431083DFd6c5BbB040e234F) |
-| Standard Gateway | [`0xbC5895942B2066046136ff5E038b35fC11dA3Ebc`](https://sepolia.arbiscan.io/address/0xbC5895942B2066046136ff5E038b35fC11dA3Ebc) |
-| Custom Gateway | [`0x3016f46de1caa8b8F34C5CE4020932Df66CD726A`](https://sepolia.arbiscan.io/address/0x3016f46de1caa8b8F34C5CE4020932Df66CD726A) |
+| Router | `0xeED90Fa3A78d54AD8431083DFd6c5BbB040e234F` |
+| Standard Gateway | `0xbC5895942B2066046136ff5E038b35fC11dA3Ebc` |
+| Custom Gateway | `0x3016f46de1caa8b8F34C5CE4020932Df66CD726A` |
 
 ### DAC Keyset
 
