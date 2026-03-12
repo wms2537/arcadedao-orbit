@@ -1,0 +1,82 @@
+{
+  "chainId": 942070,
+  "chainName": "ArcadeDao",
+  "parentChainId": 421614,
+  "rollupVersion": "v3.1",
+  "isAnyTrust": true,
+  "gasToken": "0x7C1505aD7B5E863E585AAAe014041a29963217Bf",
+  "chainConfig": {
+    "chainId": 942070,
+    "homesteadBlock": 0,
+    "daoForkBlock": null,
+    "daoForkSupport": true,
+    "eip150Block": 0,
+    "eip150Hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "eip155Block": 0,
+    "eip158Block": 0,
+    "byzantiumBlock": 0,
+    "constantinopleBlock": 0,
+    "petersburgBlock": 0,
+    "istanbulBlock": 0,
+    "muirGlacierBlock": 0,
+    "berlinBlock": 0,
+    "londonBlock": 0,
+    "clique": {
+      "period": 0,
+      "epoch": 0
+    },
+    "arbitrum": {
+      "EnableArbOS": true,
+      "AllowDebugPrecompiles": false,
+      "DataAvailabilityCommittee": true,
+      "InitialArbOSVersion": 51,
+      "InitialChainOwner": "0x6ba4e80bf45c3867EE99Cd23aA59b7f93a33F593",
+      "GenesisBlockNum": 0,
+      "MaxCodeSize": 24576,
+      "MaxInitCodeSize": 49152
+    }
+  },
+  "coreContracts": {
+    "rollup": "0x358754Ba9Abd40a0975AD2Fbb60465EBa45d805F",
+    "inbox": "0xF6C060d5Dc31DDbC5CdbC9Acb907f9d719C01182",
+    "nativeToken": "0x7C1505aD7B5E863E585AAAe014041a29963217Bf",
+    "outbox": "0x27c499F4A081E39dA6271b4985DC481Fcad59716",
+    "rollupEventInbox": "0x272214f444C1EFB2C6126dcf473577EC30B6C9bd",
+    "challengeManager": "0x742817c7a542076466e669fF5bF23fD7B47aD53b",
+    "adminProxy": "0x6999e1874decd5d0Fd8B88655b82009282BBe3bD",
+    "sequencerInbox": "0xddF740324Eb76d535838449b9131688F31254002",
+    "bridge": "0x6906E5cF83e0b4bB8C3401E9159cfbB8DA35DD83",
+    "upgradeExecutor": "0x8e14F8716282a377A3F62c7ae99974320c329b9D",
+    "validatorWalletCreator": "0x2c37dCBCE3fbe32c9Ba62892F1E41DbB023BB62b",
+    "deployedAtBlockNumber": 248155073
+  },
+  "deployer": "0x6ba4e80bf45c3867EE99Cd23aA59b7f93a33F593",
+  "timestamp": "2026-03-08T14:56:25.568Z",
+  "tokenBridgeContracts": {
+    "parentChain": {
+      "router": "0x25687edA7a73444B8ddC2A9692569709736F6757",
+      "standardGateway": "0x91aedBBd01d9504E8DaD5c962BCA1D48f86980A7",
+      "customGateway": "0x2136c324d73b1D9c320ae9C1F278492e4b5C7457",
+      "wethGateway": "0x0000000000000000000000000000000000000000",
+      "weth": "0x0000000000000000000000000000000000000000",
+      "multicall": "0xce1CAd780c529e66e3aa6D952a1ED9A6447791c1"
+    },
+    "orbitChain": {
+      "router": "0xeED90Fa3A78d54AD8431083DFd6c5BbB040e234F",
+      "standardGateway": "0xbC5895942B2066046136ff5E038b35fC11dA3Ebc",
+      "customGateway": "0x3016f46de1caa8b8F34C5CE4020932Df66CD726A",
+      "wethGateway": "0x0000000000000000000000000000000000000000",
+      "weth": "0x0000000000000000000000000000000000000000",
+      "proxyAdmin": "0x77f7958afa9cac8Aa63c99b8A3Eb043d8523B346",
+      "beaconProxyFactory": "0x404db5D007f92336c7Ff1f8B73d29C740369eA9b",
+      "upgradeExecutor": "0x80a7496c1042F66DFc5eD8F48bfaf9EbD5A8a316",
+      "multicall": "0xC314C75412BfE4f09e563edE75398766Fe572E64"
+    }
+  },
+  "dacKeyset": {
+    "keysetHash": "0x56773492de5c1c10fff547558dd3f885e8cbbd9446276ae6b3ba81b57714f198",
+    "assumedHonest": 1,
+    "members": 1,
+    "registeredAt": "2026-03-08T15:33:06.668Z"
+  }
+}

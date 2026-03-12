@@ -1,0 +1,29 @@
+{
+  "name": "arcadedao",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "bash setup.sh",
+    "deploy:token": "npx tsx scripts/deploy-arcade-token.ts",
+    "deploy:rollup": "npx tsx scripts/deploy-rollup.ts",
+    "deploy:token-bridge": "npx tsx scripts/deploy-token-bridge.ts",
+    "config:node": "npx tsx scripts/prepare-node-config.ts",
+    "config:anytrust": "npx tsx scripts/configure-anytrust.ts",
+    "manage:validators": "npx tsx scripts/manage-validators.ts",
+    "manage:governance": "npx tsx scripts/manage-governance.ts",
+    "fetch:bridge": "npx tsx scripts/fetch-bridge-addresses.ts",
+    "deploy": "bash deploy.sh"
+  },
+  "dependencies": {
+    "@arbitrum/chain-sdk": "^0.25.0",
+    "@openzeppelin/contracts": "^5.2.0",
+    "dotenv": "^16.4.0",
+    "viem": "^1.20.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0"
+  }
+}

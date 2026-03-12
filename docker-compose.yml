@@ -1,0 +1,61 @@
+services:
+  nitro-node:
+    image: offchainlabs/nitro-node:v3.9.4-7f582c3
+    container_name: arcadedao-node
+    restart: unless-stopped
+    ports:
+      - "8449:8449"   # L3 RPC
+      - "8548:8548"   # L3 WebSocket
+      - "9642:9642"   # Metrics
+    volumes:
+      - ./nodeConfig.json:/config/nodeConfig.json
+      - ./data/arbitrum:/home/user/.arbitrum
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        rm -rf /home/user/.arbitrum/*/nitro/wasm
+        exec /usr/local/bin/nitro \
+          --conf.file=/config/nodeConfig.json \
+          --node.dangerous.no-sequencer-coordinator \
+          --validation.wasm.allowed-wasm-module-roots=/home/user/nitro-legacy/machines,/home/user/target/machines \
+          --http.addr=0.0.0.0 \
+          --http.port=8449 \
+          --http.vhosts=* \
+          --http.corsdomain=* \
+          --http.api=eth,net,web3,arb,debug \
+          --ws.addr=0.0.0.0 \
+          --ws.port=8548
+    environment:
+      - NITRO_NODE_CONFIG=/config/nodeConfig.json
+
+  # DAS server for AnyTrust data availability
+  # Generate BLS keys first:
+  #   docker run --rm -v $(pwd)/das-keys:/keys \
+  #     offchainlabs/nitro-node:v3.9.4-7f582c3 datool keygen --dir /keys
+  das-server:
+    image: offchainlabs/nitro-node:v3.9.4-7f582c3
+    container_name: arcadedao-das
+    restart: unless-stopped
+    ports:
+      - "9877:9877"   # DAS REST API
+      - "9876:9876"   # DAS RPC
+    volumes:
+      - ./data/das:/home/user/das-data
+      - ./das-keys:/home/user/das-keys
+    entrypoint: /usr/local/bin/daserver
+    command:
+      - --data-availability.local-file-storage.enable
+      - --data-availability.local-file-storage.data-dir=/home/user/das-data
+      - --data-availability.parent-chain-node-url=https://sepolia-rollup.arbitrum.io/rpc
+      - --data-availability.sequencer-inbox-address=0xddF740324Eb76d535838449b9131688F31254002
+      - --data-availability.key.key-dir=/home/user/das-keys
+      - --enable-rest
+      - --rest-addr=0.0.0.0
+      - --rest-port=9877
+      - --enable-rpc
+      - --rpc-addr=0.0.0.0
+      - --rpc-port=9876
+      - --log-level=3
+
+# Create data directories before starting: mkdir -p data/arbitrum data/das

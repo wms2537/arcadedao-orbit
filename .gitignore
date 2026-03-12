@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Environment (contains private keys)
+.env
+
+# Build artifacts
+contracts/out/
+contracts/cache/
+
+# DAS private keys (public keys are OK to commit)
+das-keys/das_bls
+
+# Node data
+data/
+
+# OS files
+.DS_Store
+.cursor/
